@@ -98,9 +98,9 @@
     inset: 0;
     background: linear-gradient(
       to bottom,
-      var(--overlay-start) 0%,
-      var(--overlay-start) 40%,
-      var(--overlay-end) 100%
+      rgba(0,0,0,0.18) 0%,
+      rgba(0,0,0,0.10) 30%,
+      rgba(0,0,0,0.45) 100%
     );
     pointer-events: none;
   }
@@ -141,17 +141,46 @@
     }
   }
 
+  .brand-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .brand-name {
+    font-family: 'Yrsa', Georgia, serif;
+    font-size: clamp(3rem, 9vw, 7rem);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.4);
+    text-decoration: none;
+    display: block;
+  }
+  .brand-name:hover {
+    color: #ffffff;
+    opacity: 0.85;
+  }
+
+  .brand-divider {
+    width: clamp(40px, 8vw, 80px);
+    height: 1px;
+    background: rgba(255,255,255,0.40);
+  }
+
   .footer-strip {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     background: transparent;
-    padding: clamp(28px, 4vw, 44px) clamp(20px, 5vw, 64px);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 10;
+    pointer-events: none;
   }
 
   .ig-link {
@@ -167,7 +196,7 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-  .ig-link:hover { color: #ffffff; }
+  .ig-link:hover { color: #ffffff; background: rgba(0,0,0,0.28); }
   .ig-link:focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 4px;
